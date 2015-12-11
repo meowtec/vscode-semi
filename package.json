@@ -16,5 +16,8 @@
   "main": "./extension",
   "devDependencies": {
     "vscode": "0.10.x"
+  },
+  "dependencies": {
+    "semi": "^4.0.4"
   }
 }

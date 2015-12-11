@@ -11,7 +11,7 @@ var date
 
 function activate(context) {
 
-  var controller = workspace.onDidSaveTextDocument((doc) => {
+  var disposable = workspace.onDidSaveTextDocument((doc) => {
     if (Date.now() - date < 100) {return}
 
     var range = new Range(0, 0, doc.lineCount + 1, 0)
@@ -32,7 +32,7 @@ function activate(context) {
     })
   })
 
-  context.subscriptions.push(controller)
+  context.subscriptions.push(disposable)
 }
 
 exports.activate = activate
